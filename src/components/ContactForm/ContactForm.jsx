@@ -1,8 +1,8 @@
-import styles from "./ContactForm.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
+import styles from "./ContactForm.module.css";
 
 const validationSchema = Yup.object({
   name: Yup.string().min(3).max(50).required(),
@@ -25,19 +25,19 @@ export default function ContactForm() {
     >
       <Form className={styles.form}>
         <label className={styles.label} htmlFor="name">
-          Name
+          Имя
         </label>
         <Field className={styles.input} name="name" type="text" />
         <ErrorMessage name="name" component="div" />
 
         <label className={styles.label} htmlFor="number">
-          Number
+          Номер
         </label>
         <Field className={styles.input} name="number" type="tel" />
         <ErrorMessage name="number" component="div" />
 
         <button className={styles.button} type="submit">
-          Add contact
+          Добавить контакт
         </button>
       </Form>
     </Formik>
