@@ -25,19 +25,19 @@ export default function ContactForm() {
     >
       <Form className={styles.form}>
         <label className={styles.label} htmlFor="name">
-          Имя
+          Name
         </label>
         <Field className={styles.input} name="name" type="text" />
         <ErrorMessage name="name" component="div" />
 
         <label className={styles.label} htmlFor="number">
-          Номер
+          Number
         </label>
         <Field className={styles.input} name="number" type="tel" />
         <ErrorMessage name="number" component="div" />
 
         <button className={styles.button} type="submit">
-          Добавить контакт
+          Add contact
         </button>
       </Form>
     </Formik>
